@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog question</title>
+
+    <!-- daisy ui + tailwind css cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- google font cdn -->
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+     <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#B4F461' ,
+                secondary: 'rgba(17, 17, 17, 0.7)',
+                bgNav: '#F9F7F3',
+              },
+            fontFamily : {
+               lexend : "Lexend",
+            },
+            }
+          }
+        }
+      </script>
+</head>
+<body>
+       <!-- nav section starts here -->
+   <div class="mb-10">
+    <header class="bg-bgNav pb-10 pt-5 mb-7">
+      <nav class="flex justify-between w-11/12 mx-auto">
+          <button class="btn bg-primary font-bold px-8 py-2 text-lg md:text-xl" id="home-btn" onclick="homeBtnClick()">Home</button>
+  
+          <div class="hidden md:flex justify-center items-center gap-3">
+              <img src="./assets/logo.png" alt="">
+              <h1 class="font-bold text-lg md:text-xl">Donate Bangladesh</h1>
+          </div>
+  
+          <button class="flex justify-center items-center gap-3 btn bg-transparent">
+              <img src="./assets/coin.png" alt="">
+             <span class="font-bold text-secondary text-lg  md:text-xl">5500 BDT</span>
+          </button>
+      </nav>
+    </header>
+
+    </div>
+      <!-- nav section ends here -->
+
+
+      <div class="w-11/12 mx-auto">
+        <h1 class="font-bold text-5xl mb-5">Important FAQ</h1>
+        <div class="collapse collapse-arrow border-base-300 border">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">What is the Document Object Modal (DOM)?</div>
+            <div class="collapse-content">
+              <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow border-base-300 border">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+            <div class="collapse-content">
+              <p>The getElementById method allows you to select an element by its ID. This method returns the element object if it finds an element with the specified ID, otherwise, it returns null. 
+              </p>
+
+
+              <p>The getElementsByClassName method allows you to select elements by their class name. It returns a collection of all elements in the document with the specified class name.</p>
+
+
+              <p>The getElementsByTagName method allows you to select elements by their tag name. It returns a collection of all elements in the document with the specified tag name.</p>
+
+
+              <p>The querySelector method allows you to select the first element that matches a specified CSS selector(s) in the document.</p>
+
+              <p>The querySelectorAll method allows you to select all elements that match a specified CSS selector(s) in the document.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow border-base-300 border">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, why is it useful?</div>
+            <div class="collapse-content">
+              <p>Event delegation refers to the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated. It allows us to attach a single event listener for elements that exist now or in the future.</p>
+            </div>
+          </div>
+
+          <div class="collapse collapse-arrow border-base-300 border">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
+            <div class="collapse-content">
+              <p>The classList object only provide methods to change the class of an element. If you want to change other attributes like id , href , or src , you can use the setAttribute() method. The setAttribute() method accepts two arguments: The name of the attribute to set.</p>
+            </div>
+          </div>
+      </div>
+    <script src="index.js"></script>
+</body>
+</html>
