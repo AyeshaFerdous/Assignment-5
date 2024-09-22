@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Bangladesh</title>
+
+    <!-- daisy ui + tailwind css cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- google font cdn -->
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+     <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#B4F461' ,
+                secondary: 'rgba(17, 17, 17, 0.7)',
+                bgNav: '#F9F7F3',
+              },
+            fontFamily : {
+               lexend : "Lexend",
+            },
+            }
+          }
+        }
+      </script>
+</head>
+<body>
+   <!-- nav section starts here -->
+   <div class="mb-10">
+  <header class="bg-bgNav pb-10 pt-5 mb-7">
+    <nav class="flex justify-between w-11/12 mx-auto">
+        <button class="btn bg-primary font-bold px-8 py-2 text-lg md:text-xl">Blog</button>
+
+        <div class="hidden md:flex justify-center items-center gap-3">
+            <img src="./assets/logo.png" alt="">
+            <h1 class="font-bold text-lg md:text-xl">Donate Bangladesh</h1>
+        </div>
+
+        <button class="flex justify-center items-center gap-3 btn bg-transparent">
+            <img src="./assets/coin.png" alt="">
+           <span class="font-bold text-secondary text-lg  md:text-xl">5500 BDT</span>
+        </button>
+    </nav>
+  </header>
+
+  <div class="flex justify-center items-center gap-4 mb-10">
+      <button class="btn bg-primary text-lg md:text-xl font-semibold px-8 py-2">Donation</button>
+      <button class="btn text-secondary text-lg md:text-xl font-medium px-8 py-2 border border-solid border-slate-200">History</button>
+  </div>
+
+  <hr class="text-slate-200">
+ </div>
+
+  
+   <!-- nav section ends here -->
+
+
+   
+
+
+
+
+    
+    <!-- js cdn -->
+
+    <script src="index.js"></script>
+</body>
+</html>
