@@ -16,6 +16,7 @@ document.getElementById('noakhali-donate-btn').addEventListener('click', functio
    
    const noakhaliDonateAmount = parseFloat(document.getElementById('noakhali-donate-amount').innerText);
 
+   const title = document.getElementById('noakhali-title').innerText;
    const balance = noakhaliAmount + noakhaliDonateAmount;
     
     
@@ -26,6 +27,8 @@ document.getElementById('noakhali-donate-btn').addEventListener('click', functio
    document.getElementById('main-balance').innerText = myBalance;
 
    document.getElementById('noakhali-donate-amount').innerText = balance;
+
+   addToHistory(noakhaliAmount, title)
 });
 
 // feni donate button
@@ -34,7 +37,8 @@ document.getElementById('feni-donate-btn').addEventListener('click', function(){
     const feniAmount = parseFloat(document.getElementById('feni-amount').value);
     
     const feniDonateAmount = parseFloat(document.getElementById('feni-donate-amount').innerText);
- 
+    const title = document.getElementById('feni-title').innerText;
+
     const balance = feniAmount + feniDonateAmount;
      
      
@@ -45,6 +49,8 @@ document.getElementById('feni-donate-btn').addEventListener('click', function(){
     document.getElementById('main-balance').innerText = myBalance;
  
     document.getElementById('feni-donate-amount').innerText = balance;
+
+    addToHistory(feniAmount, title)
  });
 
 // quota donate button
@@ -53,7 +59,8 @@ document.getElementById('feni-donate-btn').addEventListener('click', function(){
     const quotaAmount = parseFloat(document.getElementById('quota-amount').value);
     
     const quotaDonateAmount = parseFloat(document.getElementById('quota-donate-amount').innerText);
- 
+    const title = document.getElementById('quota-title').innerText;
+
     const balance = quotaAmount + quotaDonateAmount;
      
      
@@ -64,7 +71,12 @@ document.getElementById('feni-donate-btn').addEventListener('click', function(){
     document.getElementById('main-balance').innerText = myBalance;
  
     document.getElementById('quota-donate-amount').innerText = balance;
+
+    addToHistory(quotaAmount, title);
  });
+
+
+//  toggole features
 
 const historyTab = document.getElementById('history-btn');
 const donationTab = document.getElementById('donation-btn');
@@ -96,6 +108,10 @@ function  tabSwitchHistory(id, donationId){
     "border-solid" ,
    "border-slate-200",
    )
+
+   document.getElementById("card-section").classList.add("hidden");
+    document.getElementById("history-list").classList.remove("hidden");
+    
 }
 
 function  tabSwitchDonation(donationId, id){
@@ -119,4 +135,22 @@ function  tabSwitchDonation(donationId, id){
      "border-solid" ,
     "border-slate-200",
     )
+
+    document.getElementById("card-section").classList.remove("hidden");
+     document.getElementById("history-list").classList.add("hidden");
+
+ }
+
+
+ function addToHistory(donateAmount, title){
+   const historyItem = document.createElement('div');
+   historyItem.className = "w-11/12 mx-auto bg-white p-3 border border-solid border-slate-200 rounded-lg space-y-3 mb-5";
+
+
+   historyItem.innerHTML = `
+    <p class="font-bold text-2xl">${(donateAmount)} Taka is ${(title)}</p>
+    <p class="text-secondary">Date: ${new Date()}</p>
+   `;
+   const historyContainer = document.getElementById('history-list');
+     historyContainer.insertBefore(historyItem, historyContainer.firstChild);
  }
