@@ -8,24 +8,26 @@ document.getElementById('noakhali-donate-btn').addEventListener('click', functio
    
    const noakhaliDonateAmount = parseFloat(document.getElementById('noakhali-donate-amount').innerText);
 
-   if(noakhaliAmount < 0 || isNaN(noakhaliAmount) || noakhaliAmount > noakhaliDonateAmount || noakhaliAmount===""){
-      alert('Invalid Donation Amount');
-      document.getElementById('my_modal_1').close();
-      return;
-   }
+   
    const title = document.getElementById('noakhali-title').innerText;
    const balance = noakhaliAmount + noakhaliDonateAmount;
     
     
    const mainBalance = parseFloat(document.getElementById('main-balance').innerText);
+   
+   if(noakhaliAmount < 0 || isNaN(noakhaliAmount) || noakhaliAmount > mainBalance || noakhaliAmount === ""){
+    alert('Invalid Donation Amount!');
+    document.getElementById('my_modal_1').close();
+    return;
+   };
    const myBalance = mainBalance - noakhaliAmount;
 
-
+   document.getElementById('noakhali-amount').value="";
    document.getElementById('main-balance').innerText = myBalance;
 
    document.getElementById('noakhali-donate-amount').innerText = balance;
 
-   addToHistory(noakhaliAmount, title)
+   addToHistory(noakhaliAmount, title);
 });
 
 // feni donate button
@@ -35,20 +37,21 @@ document.getElementById('feni-donate-btn').addEventListener('click', function(){
     
     const feniDonateAmount = parseFloat(document.getElementById('feni-donate-amount').innerText);
 
-    if(feniAmount < 0 || isNaN(feniAmount) || feniAmount > feniDonateAmount || feniAmount===""){
-      alert('Invalid Donation Amount');
-      document.getElementById('my_modal_2').close();
-      return;
-   };
+    
 
     const title = document.getElementById('feni-title').innerText;
     const balance = feniAmount + feniDonateAmount;
      
      
     const mainBalance = parseFloat(document.getElementById('main-balance').innerText);
-    const myBalance = mainBalance - feniAmount;
- 
-    
+    if(feniAmount < 0 || isNaN(feniAmount) || feniAmount > mainBalance || feniAmount===""){
+        alert('Invalid Donation Amount');
+        document.getElementById('my_modal_2').close();
+        return;
+     };
+
+     const myBalance = mainBalance - feniAmount;  
+    document.getElementById('feni-amount').value="";
     document.getElementById('main-balance').innerText = myBalance;
  
     document.getElementById('feni-donate-amount').innerText = balance;
@@ -62,20 +65,22 @@ document.getElementById('feni-donate-btn').addEventListener('click', function(){
     const quotaAmount = parseFloat(document.getElementById('quota-amount').value);
     const quotaDonateAmount = parseFloat(document.getElementById('quota-donate-amount').innerText);
 
-    if(quotaAmount < 0 || isNaN(quotaAmount) || quotaAmount > quotaDonateAmount || quotaAmount===""){
-        alert('Invalid Donation Amount');
-        document.getElementById('my_modal_3').close();
-        return;
-     };
+    
     const title = document.getElementById('quota-title').innerText;
 
     const balance = quotaAmount + quotaDonateAmount;
      
      
     const mainBalance = parseFloat(document.getElementById('main-balance').innerText);
+    if(quotaAmount < 0 || isNaN(quotaAmount) || quotaAmount > mainBalance || quotaAmount===""){
+        alert('Invalid Donation Amount');
+        document.getElementById('my_modal_3').close();
+        return;
+     };
     const myBalance = mainBalance - quotaAmount;
  
-    
+    document.getElementById('quota-amount').value="";
+
     document.getElementById('main-balance').innerText = myBalance;
  
     document.getElementById('quota-donate-amount').innerText = balance;
