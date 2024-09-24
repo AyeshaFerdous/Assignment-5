@@ -5,13 +5,14 @@
 document.getElementById('noakhali-donate-btn').addEventListener('click', function(){
    const noakhaliAmount = parseFloat(document.getElementById('noakhali-amount').value);
 
-   if(noakhaliAmount < 0 || isNaN(noakhaliAmount)){
+   
+   const noakhaliDonateAmount = parseFloat(document.getElementById('noakhali-donate-amount').innerText);
+
+   if(noakhaliAmount < 0 || isNaN(noakhaliAmount) || noakhaliAmount > noakhaliDonateAmount || noakhaliAmount===""){
       alert('Invalid Donation Amount');
       document.getElementById('my_modal_1').close();
       return;
    }
-   const noakhaliDonateAmount = parseFloat(document.getElementById('noakhali-donate-amount').innerText);
-
    const title = document.getElementById('noakhali-title').innerText;
    const balance = noakhaliAmount + noakhaliDonateAmount;
     
@@ -31,14 +32,16 @@ document.getElementById('noakhali-donate-btn').addEventListener('click', functio
 
 document.getElementById('feni-donate-btn').addEventListener('click', function(){
     const feniAmount = parseFloat(document.getElementById('feni-amount').value);
-    if(feniAmount < 0 || isNaN(feniAmount)){
+    
+    const feniDonateAmount = parseFloat(document.getElementById('feni-donate-amount').innerText);
+
+    if(feniAmount < 0 || isNaN(feniAmount) || feniAmount > feniDonateAmount || feniAmount===""){
       alert('Invalid Donation Amount');
       document.getElementById('my_modal_2').close();
       return;
-   }
-    const feniDonateAmount = parseFloat(document.getElementById('feni-donate-amount').innerText);
-    const title = document.getElementById('feni-title').innerText;
+   };
 
+    const title = document.getElementById('feni-title').innerText;
     const balance = feniAmount + feniDonateAmount;
      
      
@@ -51,18 +54,19 @@ document.getElementById('feni-donate-btn').addEventListener('click', function(){
     document.getElementById('feni-donate-amount').innerText = balance;
 
     addToHistory(feniAmount, title);
- });
-
+ 
+});
 // quota donate button
 
  document.getElementById('quota-donate-btn').addEventListener('click', function(){
     const quotaAmount = parseFloat(document.getElementById('quota-amount').value);
-    if(quotaAmount < 0 || isNaN(quotaAmount)){
-      alert('Invalid Donation Amount');
-      document.getElementById('my_modal_3').close();
-      return;
-   }
     const quotaDonateAmount = parseFloat(document.getElementById('quota-donate-amount').innerText);
+
+    if(quotaAmount < 0 || isNaN(quotaAmount) || quotaAmount > quotaDonateAmount || quotaAmount===""){
+        alert('Invalid Donation Amount');
+        document.getElementById('my_modal_3').close();
+        return;
+     };
     const title = document.getElementById('quota-title').innerText;
 
     const balance = quotaAmount + quotaDonateAmount;
